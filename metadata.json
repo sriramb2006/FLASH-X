@@ -1,0 +1,7 @@
+{
+  "name": "FLASH-X",
+  "description": "Autonomous Travel Intelligence Operating System — Outstation Bus Reservation System evolved into an intelligent, end-to-end travel platform.",
+  "requestFramePermissions": ["geolocation", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

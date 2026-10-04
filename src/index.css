@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-base: #101114;
+    --bg-surface: #16181F;
+    --bg-surface-elevated: #1F222B;
+    --bg-surface-overlay: #272B36;
+    --accent-gold: #E7CB58;
+    --accent-gold-hover: #F2DA75;
+    --accent-violet: #8B5CF6;
+    --accent-cyan: #06B6D4;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-gold: rgba(231, 203, 88, 0.35);
+    --text-primary: #F3F4F6;
+    --text-muted: #9CA3AF;
+  }
+
+  :root.high-contrast,
+  body.high-contrast {
+    --bg-base: #000000;
+    --bg-surface: #0a0a0a;
+    --bg-surface-elevated: #141414;
+    --bg-surface-overlay: #1f1f1f;
+    --accent-gold: #FFFF00;
+    --accent-gold-hover: #FFFF66;
+    --accent-violet: #C084FC;
+    --accent-cyan: #00FFFF;
+    --border-subtle: #888888;
+    --border-gold: #FFFF00;
+    --text-primary: #FFFFFF;
+    --text-muted: #E5E7EB;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body.high-contrast {
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+  }
+
+  body.high-contrast .text-gray-400,
+  body.high-contrast .text-gray-500,
+  body.high-contrast .text-gray-600 {
+    color: #E2E8F0 !important;
+  }
+
+  body.high-contrast .text-gray-300 {
+    color: #FFFFFF !important;
+  }
+
+  body.high-contrast .border-white\/5,
+  body.high-contrast .border-white\/10,
+  body.high-contrast .border-white\/15,
+  body.high-contrast .border-white\/20 {
+    border-color: rgba(255, 255, 255, 0.45) !important;
+  }
+
+  body.high-contrast input,
+  body.high-contrast select,
+  body.high-contrast textarea {
+    border-color: #FFFFFF !important;
+    background-color: #000000 !important;
+    color: #FFFFFF !important;
+  }
+
+  body.high-contrast button:focus-visible,
+  body.high-contrast a:focus-visible,
+  body.high-contrast input:focus-visible,
+  body.high-contrast select:focus-visible {
+    outline: 3px solid #FFFF00 !important;
+    outline-offset: 2px !important;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom aesthetic utilities */
+.glow-gold {
+  box-shadow: 0 0 25px -5px rgba(231, 203, 88, 0.25);
+}
+
+.glow-violet {
+  box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.25);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+}
+
+.border-gold-glow {
+  border-color: rgba(231, 203, 88, 0.4);
+  box-shadow: inset 0 0 15px rgba(231, 203, 88, 0.05);
+}
+
+.grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.radial-mask {
+  mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #101114;
+}
+::-webkit-scrollbar-thumb {
+  background: #272B36;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E7CB58;
+}
+
+@keyframes dash-flow {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-dash-flow {
+  animation: dash-flow 2s linear infinite;
+}
+
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
